@@ -35,7 +35,7 @@ function generatePassword() {
 }
 
 if(!passwordLength) {
-  alert("You did not pick a valid option. Try again.");
+  alert("You did not make a valid selection. Try again.");
 
 } else if (passwordLength < 8 || passwordLength > 128) {
   passwordLength = prompt ("You must choose a value containing at least 8 and no more than 128 characters.");
@@ -120,3 +120,10 @@ if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial) {
   userSelection = special;
   console.log (special);
 };
+
+//For loop for password generator 
+for (var i = 0; i < passwordLength; i++) {
+  var passwordGenerated = userSelection[Math.floor(Math.random() * userSelection.length)];
+  console.log (passwordGenerated);
+
+}

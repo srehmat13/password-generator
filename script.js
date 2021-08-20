@@ -9,7 +9,7 @@ var confirmLower;
 var confirmUpper;
 var confirmNumber;
 var confirmSpecial;
-var userChoices;
+var userSelection;
 
 var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
 var upperCase = lowerCase.map(function(x){return x.toUpperCase});
@@ -42,9 +42,9 @@ if(!passwordLength) {
   console.log (passwordLength);
 
 } else {
-  confirmLower = confirm("Will password contain lower case letters?");
+  confirmLower = confirm("Will password contain lowercase letters?");
   console.log(confirmLower);
-  confirmUpper = confirm("Will password contain upper case letters?");
+  confirmUpper = confirm("Will password contain uppercase letters?");
   console.log(confirmUpper);
   confirmNumber = confirm("Will password contain numbers?");
   console.log(confirmNumber);
@@ -54,9 +54,69 @@ if(!passwordLength) {
 
 //No response
 if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial) {
-  userChoices = alert("Must choose which criteria to include in password");
-// 4 true options
+  userSelection = alert("Must choose which criteria to include in password");
+
+// Confirm all 4 options 
 } else if (confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
-  userChoices = lowerCase.concat(upperCase, numbers, special);
-  console.log(userChoices);
+  userSelection = lowerCase.concat(upperCase, numbers, special);
+  console.log(userSelection);
+
+//Confirm 3 out of 4 options 
+} else if (confirmLower && confirmUpper && confirmNumber) {
+  userSelection = lowerCase.concat(upperCase, numbers);
+  console.log (userSelection);
+
+} else if (confirmLower && confirmUpper && confirmSpecial) {
+  userSelection = lowerCase.concat (upperCase, special);
+  console.log (userSelection);
+
+} else if (confirmLower && confirmNumber && confirmSpecial) {
+  userSelection = upperCase.concat(numbers, special);
+  console.log (userSelection);
+
+} else if (confirmUpper && confirmNumber && confirmSpecial) {
+  userSelection = upperCase.concat(numbers, special);
+  console.log (userSelection);
+
+//Confirm 2 out of the 4 options 
+} else if (confirmLower && confirmUpper) {
+  userSelection = lowerCase.concat(upperCase);
+  console.log (userSelection);
+
+} else if (confirmLower && confirmNumber) {
+  userSelection = lowerCase.concat(numbers);
+  console.log (userSelection);
+
+} else if (confirmLower && confirmSpecial) {
+  userSelection = lowerCase.concat(special);
+  console.log (userSelection);
+
+} else if (confirmUpper && confirmNumber) {
+  userSelection = upperCase.concat(numbers);
+  console.log (userSelection);
+
+} else if (confirmUpper && confirmSpecial) {
+  userSelection = upperCase.concat(special);
+  console.log (userSelection); 
+
+} else if (confirmNumber && confirmSpecial) {
+  userSelection = numbers.concat(special);
+  console.log (userSelection);
+
+//Confirm 1 out of 4 options 
+} else if (confirmLower) {
+  userSelection = lowerCase; 
+  console.log (userSelection);
+
+} else if (confirmUpper) {
+  userSelection = upperCase; 
+  console.log (userSelection);
+
+} else if (confirmNumber) {
+  userSelection = numbers;
+  console.log (numbers);
+
+} else if (confirmSpecial) {
+  userSelection = special;
+  console.log (special);
 };

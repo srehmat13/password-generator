@@ -28,17 +28,19 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//Start Series of Prompts 
+//Start Series of Prompts
+//Character Count 
 function generatePassword() {
   passwordLength = prompt ("How many characters would you like to include in your password? Password must contain at least 8 and no more than 128 characters.");
-  
+
+//Not a Valid Selection
 if(!passwordLength) {
   alert("You did not make a valid selection. Try again.");
 
 } else if (passwordLength < 8 || passwordLength > 128) {
   passwordLength = prompt ("You must choose a value containing at least 8 and no more than 128 characters.");
 
-
+//User can choose from following additional selections 
 } else {
   confirmLower = confirm("Will password contain lowercase letters?");
   confirmUpper = confirm("Will password contain uppercase letters?");

@@ -10,7 +10,7 @@ To create a page that a user can then use to generate a random password. The use
 * JS
 
 ## Website
-
+Website URL: https://srehmat13.github.io/password-generator/
 
 ![ScreenShot](/assets/images/password-screenshot.png)
 
